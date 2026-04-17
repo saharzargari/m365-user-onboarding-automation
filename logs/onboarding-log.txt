@@ -1,0 +1,51 @@
+[2026-04-17 14:02:57] Simulating onboarding for:
+Name: 
+UPN: 
+Department: 
+Job Title: 
+Usage Location: 
+Group: 
+Status: SUCCESS (SIMULATED)
+[2026-04-17 14:02:57] Simulating onboarding for:
+Name: Sara Ahmadi
+UPN: sara.ahmadi@contoso.com
+Department: IT
+Job Title: Support Analyst
+Usage Location: CA
+Group: Helpdesk
+Status: SUCCESS (SIMULATED)
+[2026-04-17 14:02:57] Simulating onboarding for:
+Name: 
+UPN: 
+Department: 
+Job Title: 
+Usage Location: 
+Group: 
+Status: SUCCESS (SIMULATED)
+[2026-04-17 14:02:57] Simulating onboarding for:
+Name: Reza Karimi
+UPN: reza.karimi@contoso.com
+Department: HR
+Job Title: Coordinator
+Usage Location: CA
+Group: HR-Team
+Status: SUCCESS (SIMULATED)
+[2026-04-17 14:02:57] Simulating onboarding for:
+Name: 
+UPN: 
+Department: 
+Job Title: 
+Usage Location: 
+Group: 
+Status: SUCCESS (SIMULATED)
+[2026-04-17 14:03:53] Validation failed for 
+[2026-04-17 14:03:53] Created account for Sara Ahmadi with UPN sara.ahmadi@contoso.com
+[2026-04-17 14:03:53] Assigned Sara Ahmadi to group Helpdesk
+[2026-04-17 14:03:53] Set Department=IT, JobTitle=Support Analyst for Sara Ahmadi
+[2026-04-17 14:03:53] Prepared license assignment for Sara Ahmadi, UsageLocation=CA
+[2026-04-17 14:03:53] Validation failed for 
+[2026-04-17 14:03:53] Created account for Reza Karimi with UPN reza.karimi@contoso.com
+[2026-04-17 14:03:53] Assigned Reza Karimi to group HR-Team
+[2026-04-17 14:03:53] Set Department=HR, JobTitle=Coordinator for Reza Karimi
+[2026-04-17 14:03:53] Prepared license assignment for Reza Karimi, UsageLocation=CA
+[2026-04-17 14:03:53] Validation failed for 
