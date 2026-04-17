@@ -49,3 +49,6 @@ Status: SUCCESS (SIMULATED)
 [2026-04-17 14:03:53] Set Department=HR, JobTitle=Coordinator for Reza Karimi
 [2026-04-17 14:03:53] Prepared license assignment for Reza Karimi, UsageLocation=CA
 [2026-04-17 14:03:53] Validation failed for 
+[2026-04-17 14:46:35] SUCCESS - Created sahmadi@contoso.com | Dept=IT | Group=Helpdesk
+[2026-04-17 14:46:35] SUCCESS - Created rkarimi@contoso.com | Dept=HR | Group=HR-Team
+[2026-04-17 14:46:35] FAILED - Duplicate user: sahmadi@contoso.com

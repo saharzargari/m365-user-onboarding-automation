@@ -106,6 +106,22 @@ This project reflects real-world scenarios handled by IT administrators, especia
 
 
 
+\## 🔐 Advanced Features
+
+\- Auto-generates secure temporary passwords
+
+\- Automatically creates User Principal Names (UPN)
+
+\- Detects duplicate users before processing
+
+\- Logs success and failure scenarios
+
+
+
+\---
+
+
+
 \## 👩‍💻 Author
 
 

@@ -1,6 +1,4 @@
-FirstName,LastName,DisplayName,UserPrincipalName,Department,JobTitle,UsageLocation,GroupName
-,,,,,,,
-Sara,Ahmadi,Sara Ahmadi,sara.ahmadi@contoso.com,IT,Support Analyst,CA,Helpdesk
-,,,,,,,
-Reza,Karimi,Reza Karimi,reza.karimi@contoso.com,HR,Coordinator,CA,HR-Team
- ,,,,,,,
+FirstName,LastName,Department,JobTitle,UsageLocation,GroupName
+Sara,Ahmadi,IT,Support Analyst,CA,Helpdesk
+Reza,Karimi,HR,Coordinator,CA,HR-Team
+Sara,Ahmadi,IT,Support Analyst,CA,Helpdesk

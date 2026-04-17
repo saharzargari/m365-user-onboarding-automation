@@ -1,48 +1,46 @@
 $csvPath = "..\data\new_users.csv"
 $logFolder = "..\logs"
 $logFile = Join-Path $logFolder "onboarding-log.txt"
+$existingUsers = @()
 function Write-Log {
-   param (
-       [string]$Message
-   )
+   param ([string]$Message)
    $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
    Add-Content -Path $logFile -Value "[$timestamp] $Message"
 }
-function Validate-User {
-   param (
-       [pscustomobject]$User
-   )
-   if ([string]::IsNullOrWhiteSpace($User.FirstName) -or
-       [string]::IsNullOrWhiteSpace($User.LastName) -or
-       [string]::IsNullOrWhiteSpace($User.UserPrincipalName)) {
-       return $false
+function Generate-Password {
+   $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%"
+   $password = -join ((1..12) | ForEach-Object { $chars[(Get-Random -Maximum $chars.Length)] })
+   return $password
+}
+function Generate-UPN {
+   param ($FirstName, $LastName)
+   $upn = ($FirstName.Substring(0,1) + $LastName).ToLower() + "@contoso.com"
+   return $upn
+}
+function Is-Duplicate {
+   param ($upn)
+   if ($existingUsers -contains $upn) {
+       return $true
    }
-   return $true
+   return $false
 }
 if (!(Test-Path $logFolder)) {
    New-Item -ItemType Directory -Path $logFolder | Out-Null
 }
-if (!(Test-Path $csvPath)) {
-   Write-Host "CSV file not found: $csvPath"
-   exit
-}
 $users = Import-Csv $csvPath
 foreach ($user in $users) {
-   Write-Host "Processing user: $($user.DisplayName)"
-   if (-not (Validate-User -User $user)) {
-       Write-Host "Validation failed for $($user.DisplayName)"
-       Write-Log "Validation failed for $($user.DisplayName)"
+   $upn = Generate-UPN -FirstName $user.FirstName -LastName $user.LastName
+   Write-Host "Processing $($user.FirstName) $($user.LastName)"
+   if (Is-Duplicate $upn) {
+       Write-Host "Duplicate user detected: $upn"
+       Write-Log "FAILED - Duplicate user: $upn"
        continue
    }
-   Write-Host "Simulating account creation..."
-   Write-Log "Created account for $($user.DisplayName) with UPN $($user.UserPrincipalName)"
-   Write-Host "Simulating group assignment..."
-   Write-Log "Assigned $($user.DisplayName) to group $($user.GroupName)"
-   Write-Host "Simulating department/job title update..."
-   Write-Log "Set Department=$($user.Department), JobTitle=$($user.JobTitle) for $($user.DisplayName)"
-   Write-Host "Simulating license preparation..."
-   Write-Log "Prepared license assignment for $($user.DisplayName), UsageLocation=$($user.UsageLocation)"
-   Write-Host "Completed $($user.DisplayName)"
+   $password = Generate-Password
+   $existingUsers += $upn
+   Write-Host "Generated UPN: $upn"
+   Write-Host "Generated Password: $password"
+   Write-Log "SUCCESS - Created $upn | Dept=$($user.Department) | Group=$($user.GroupName)"
    Write-Host "----------------------------------------"
 }
-Write-Host "All users processed. Review the logs in $logFile"
+Write-Host "Processing complete. Check logs."
