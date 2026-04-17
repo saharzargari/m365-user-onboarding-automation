@@ -122,11 +122,11 @@ IT Service Desk Analyst | Aspiring Microsoft 365 \& Cloud Administrator
 
 
 
-🔗 LinkedIn: https://www.linkedin.com/in/YOUR-LINK  
+🔗 LinkedIn: https://www.linkedin.com/in/saharzargari  
 
 
 
-💻 GitHub: https://github.com/YOUR-USERNAME
+💻 GitHub: https://github.com/saharzzzz
 
 &#x20;
 
